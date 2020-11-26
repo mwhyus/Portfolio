@@ -141,6 +141,19 @@
     padding: 100px 0;
   }
 
+  .about, .tech, .skills, .teams, .contact{
+    font-family: 'poppins', sans-serif;
+  }
+
+  .about .about-content,
+  .tech .tech-content,
+  .skills .skills-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   section .title{
     position: relative;
     text-align: center;
@@ -156,7 +169,7 @@
     position: absolute;
     bottom: 0px;
     left: 50%;
-    width: 250px;
+    width: 170px;
     height: 3px;
     background: #111;
     transform: translateX(-50%);
@@ -176,19 +189,9 @@
 
 
 /* About Me */
-.about, .tech{
-  font-family: 'poppins', sans-serif;
-}
 
 .about .title::after{
   content: "Who I Am";
-}
-
-.about .about-content, .tech .tech-content{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .about .about-content .left{
@@ -199,7 +202,7 @@
   height: 400px;
   width: 400px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .about .about-content .right{
@@ -240,18 +243,20 @@
 }
 
 /* Tech Experience */
-.tech {
+.tech, .teams{
   color: #dcdde1;
   background: #1A1A1A;
 }
 
-.tech .title::before{
+.tech .title::before
+.teams .title::before{
   background: #dcdde1;
 }
 
-.tech .title::after{
+.tech .title::after,
+.teams .title::after{
   background: #1A1A1A;
-  content: "What I Experiences";
+  content: "What Are My Experiences";
 }
 
 .tech .tech-content .card{
@@ -280,6 +285,14 @@
   color: #dcdde1;
 }
 
+.tech .tech-content .card .box{
+  transition: all 0.3s ease;
+}
+
+.tech .tech-content .card:hover .box{
+  transform: scale(1.05);
+}
+
 .tech .tech-content .card i {
   font-size: 50px;
   color: #c23616;
@@ -292,6 +305,219 @@
   margin: 10px 0 7px 0;
 }
 
+
+/* Skills Section */
+
+.skills .title::after{
+    content: "What I Know";
+}
+.skills .skills-content .column{
+  width: calc(50% - 30px);
+}
+
+.skills .skills-content .left .text{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.skills .skills-content .left p{
+  text-align: justify;
+}
+
+.skills .skills-content .left a{
+  display: inline-block;
+  background: #c23616;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid #c23616;
+  transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover{
+  color: #c23616;
+  background: none;
+}
+
+.skills .skills-content .right .bars{
+  margin-bottom: 15px;
+}
+
+.skills .skills-content .right .info{
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skills .skills-content .right span{
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.skills .skills-content .right .line{
+  height: 5px;
+  width: 100%;
+  background: lightgrey;
+  position: relative;
+}
+
+.skills .skills-content .right .line::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #c23616;
+}
+
+.skills-content .right .DA::before{
+  width: 70%;
+}
+
+.skills-content .right .PM::before{
+  width: 75%;
+}
+
+.skills-content .right .HTML::before{
+  width: 65%;
+}
+
+.skills-content .right .CSS::before{
+  width: 65%;
+}
+
+.skills-content .right .JS::before{
+  width: 58%;
+}
+
+
+/* Teams Section */
+.teams .title::after{
+  content: "Who Were With We";
+}
+
+.teams .carousel .card{
+  background: #111 ;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover{
+  background: #c23616;
+}
+
+.teams .carousel .card .box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover .box{
+  transform: scale(1.05);
+}
+
+.teams .carousel .card text{
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+
+.teams .carousel .card img{
+ height: 150px;
+ width: 150px; 
+ object-fit: cover;
+ border-radius: 50%;
+ border: 5px solid #c23616;
+}
+
+.teams .carousel .card:hover img{
+  border-color: #dcdde1;
+}
+
+.owl-dots{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.owl-dot{
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none!important;
+  border-radius: 50%;
+  border: 2px solid #c23616!important;
+  transition: all 0.3s ease;
+}
+
+.owl-dot.active{
+ width: 35px;
+ border-radius: 14px;   
+}
+
+.owl-dot.active, 
+.owl-dot:hover{
+  background: #c23616!important;
+}
+
+/*  Contact Me */
+
+.contact .title::after{
+  content: "May I Help?";
+}
+
+.contact .contact-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact .contact-content .column{
+  width: calc(50% - 30px);
+}
+
+.contact .contact-content .text{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact .contact-content .left p{
+  text-align: justify;
+}
+
+.contact .contact-content .left .icons{
+  margin: 10px;
+}
+
+.contact .contact-content .left .row{
+  display: flex;
+  height: 65px;
+  align-items: center;
+}
+
+.contact .contact-content .left .row .info{
+  margin-left: 15px;
+}
+
+.contact .contact-content .left a{
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.contact .contact-content i{
+  font-size: 24px;
+  color: #1A1A1A;
+}
 
 
 /* Responsive media */
@@ -382,6 +608,16 @@
   .about .about-content .right p{
     flex: 100%;
   }
+
+  .tech .tech-content .card{
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+
+  .skills .skills-content .column{
+    width: 100%;
+    margin-top: 25px;
+  }
 }
 
 @media (max-width: 690px){
@@ -400,6 +636,10 @@
   .home .home-content a{
     font-size: 23px;
   }
+  .tech .tech-content .card{
+    width: 100%;
+  }
+
 }
 
   @media (max-width: 500px){
