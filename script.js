@@ -13,6 +13,15 @@ $(document).ready(function(){
         $('.menu-btn i').toggleClass('active')
     });
 
+    // Typing animation
+    let type = new Typed('.typing', {
+        strings: ['Mobile Development', 'Web Development', 'And Beatbox'],
+        typeSpeed: 90,
+        backSpeed: 60,
+        loop: true
+    })
+
+
     // owl carousel script
     $('.carousel').owlCarousel({
         margin: 20,
